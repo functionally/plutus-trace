@@ -1,0 +1,4 @@
+[submodule "plutus"]
+	path = plutus
+	url = https://github.com/input-output-hk/plutus
+	branch = master
