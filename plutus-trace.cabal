@@ -12,6 +12,8 @@ executable example-mine
   main-is:             Main.hs
   other-modules:       Game
                        Game.Trace
+                       Simple
+                       Simple.Trace
                        Trace
   build-depends:       base >=4.14 && <4.15
                ,       aeson

@@ -4,7 +4,11 @@ module Main where
 
 
 import Game.Trace (simulateGame)
+import Simple.Trace (simulateSimple)
 
 
 main :: IO ()
-main = simulateGame
+main =
+  do
+--  simulateGame
+    simulateSimple
