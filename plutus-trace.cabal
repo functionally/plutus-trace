@@ -11,6 +11,8 @@ build-type:          Simple
 executable example-mine
   main-is:             Main.hs
   other-modules:       Game
+                       Game.Trace
+                       Trace
   build-depends:       base >=4.14 && <4.15
                ,       aeson
                ,       bytestring
@@ -21,5 +23,6 @@ executable example-mine
                ,       plutus-tx
                ,       plutus-tx-plugin
                ,       prettyprinter
+               ,       row-types
   hs-source-dirs:      app
   default-language:    Haskell2010
