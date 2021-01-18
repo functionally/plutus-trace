@@ -21,10 +21,12 @@ import Language.Plutus.Contract (AsContractError, BlockchainActions, Contract, E
 import Language.PlutusTx (Data(I))
 import Language.PlutusTx.Prelude  hiding (Applicative (..))
 import Ledger (Address, ValidatorCtx, scriptAddress)
+import Ledger.Constraints.TxConstraints (mustValidateIn)
 import Ledger.Value (Value)
 
 import qualified Language.PlutusTx    as PlutusTx
 import qualified Ledger.Constraints   as Constraints
+import qualified Ledger.Interval      as Interval
 import qualified Ledger.Typed.Scripts as Scripts
 import qualified Prelude
 
@@ -103,5 +105,5 @@ redeem =
     unspentOutputs <- utxoAt simpleAddress
     let
       redeemer = RedeemDatum myRedeemerValue
-      tx       = collectFromScript unspentOutputs redeemer
+      tx       = collectFromScript unspentOutputs redeemer <> mustValidateIn (Interval.to 5)
     void $ submitTxConstraintsSpending simpleInstance unspentOutputs tx

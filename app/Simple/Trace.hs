@@ -38,6 +38,18 @@ redeemTrace =
       >> Trace.addBlocks 1
 
 
+expiredTrace :: ContractTrace SimpleSchema e () ()
+expiredTrace =
+  let
+    w2 = Trace.Wallet 2
+  in
+    publishTrace
+      >> Trace.addBlocks 5
+      >> Trace.callEndpoint @"redeem" w2 (RedeemDatum 2)
+      >> Trace.handleBlockchainEvents w2
+      >> Trace.addBlocks 1
+
+
 simulateSimple :: IO ()
 simulateSimple =
   do
@@ -48,4 +60,5 @@ simulateSimple =
       [
         ("publish", publishTrace)
       , ("redeem" , redeemTrace )
+      , ("expired", expiredTrace)
       ]
