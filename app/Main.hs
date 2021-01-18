@@ -3,12 +3,14 @@
 module Main where
 
 
-import Game.Trace (simulateGame)
-import Simple.Trace (simulateSimple)
+import Crowdfunding.Trace (simulateCrowdfunding)
+import Game.Trace         (simulateGame        )
+import Simple.Trace       (simulateSimple      )
 
 
 main :: IO ()
 main =
   do
+--  simulateSimple
 --  simulateGame
-    simulateSimple
+    simulateCrowdfunding

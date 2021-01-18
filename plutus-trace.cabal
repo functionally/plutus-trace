@@ -10,7 +10,9 @@ build-type:          Simple
 
 executable example-mine
   main-is:             Main.hs
-  other-modules:       Game
+  other-modules:       Crowdfunding
+                       Crowdfunding.Trace
+                       Game
                        Game.Trace
                        Simple
                        Simple.Trace
@@ -26,5 +28,6 @@ executable example-mine
                ,       plutus-tx-plugin
                ,       prettyprinter
                ,       row-types
+               ,       text
   hs-source-dirs:      app
   default-language:    Haskell2010
