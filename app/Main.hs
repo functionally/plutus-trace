@@ -11,6 +11,6 @@ import Simple.Trace       (simulateSimple      )
 main :: IO ()
 main =
   do
---  simulateSimple
---  simulateGame
+    simulateSimple
+    simulateGame
     simulateCrowdfunding
