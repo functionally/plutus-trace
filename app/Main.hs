@@ -5,6 +5,7 @@ module Main where
 
 import Crowdfunding.Trace (simulateCrowdfunding)
 import Game.Trace         (simulateGame        )
+import Notary.Trace       (simulateNotary      )
 import Simple.Trace       (simulateSimple      )
 
 
@@ -14,3 +15,4 @@ main =
     simulateSimple
     simulateGame
     simulateCrowdfunding
+    simulateNotary
